@@ -1,1 +1,56 @@
+                                                Types of Operating Systems
 
+
+                                                    Operating System
+                                                            │
+                                        ┌───────────────────┼────────────────────┐
+                                        │                   │                    │
+                                       Job Handling      Processor Support    Timing
+                                        │                   │                    │
+                                     Batch OS         Multiprocessing      Real-Time OS
+                                    Time Sharing
+                                        │
+                                   Distributed
+                                      Network
+                                     Clustered
+                                         │
+                                 Mobile / Embedded
+
+1. Batch OS — 
+Jobs are grouped and processed in batches without user interaction in between. Once one job finishes, the next starts
+automatically. Used in early mainframes for payroll, statements, etc. Problem: one stuck job blocks the whole batch.
+
+2. Time-Sharing (Multitasking) OS —
+CPU time is sliced into small quanta and rapidly switched between programs, so multiple users/apps feel like they're 
+running simultaneously. This is what Windows, Linux, and macOS do every day on your desktop.
+
+3. Multiprocessing OS —
+Multiple CPUs work in parallel within one system.
+
+Symmetric (SMP): any CPU can run any task.
+Asymmetric (AMP): a master CPU assigns work to slave CPUs.
+Gives higher throughput and fault tolerance.
+
+4. Distributed OS —
+Independent machines connected over a network behave as a single logical system. Resources live on different 
+physical nodes but appear unified to the user. Highly scalable and resilient to node failure.
+
+5. Network OS (NOS) —
+Runs on a server to share resources (files, printers) across client machines. Unlike distributed OS, users know 
+exactly which machine holds which resource — no transparency illusion.
+
+6. Real-Time OS (RTOS) —
+Tasks must complete within strict deadlines.
+
+Hard real-time: missing a deadline is catastrophic (airbags, pacemakers, missile guidance).
+Soft real-time: missing a deadline just degrades quality (video streaming, gaming).
+Predictability matters more than raw speed.
+
+7. Embedded OS — 
+Built into a single-purpose device with limited resources (smart TVs, ATMs, washing machines, car infotainment). 
+Efficient and minimal by design.
+
+8. Mobile OS — Optimized for touch input, battery life, and app sandboxing. Android and iOS are the dominant examples.
+
+9. Clustered OS — Multiple tightly-linked nodes act as one system for high availability. If one node fails, another
+takes over (failover) — common in database and web server clusters.
