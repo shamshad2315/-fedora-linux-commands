@@ -1,5 +1,6 @@
                                                 🕰️ History of Linux
-<img width="1440" height="1232" alt="image" src="https://github.com/user-attachments/assets/6c9c2e19-9e45-467c-8248-68f261756938" />
+ <img width="1038" height="940" alt="image" src="https://github.com/user-attachments/assets/a33f729e-37a0-4efe-8ae7-5e9309c54a35" />
+
                                               🌱 The Roots — Before Linux Existed
 
 Unix (1969)
