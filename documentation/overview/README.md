@@ -23,18 +23,21 @@ Unlike a complete operating system, the Linux kernel is only the core component.
 
  <div align="center">
 
- 
-+----------------------+
-|    Shell / GUI       |
-+----------------------+
-|  System Libraries    |
-+----------------------+
-|    Linux Kernel      |
-+----------------------+
-|      Hardware        |
-+----------------------+
- </div> 
+<pre>
++---------------------------+
+|        User Space         |
++---------------------------+
+|       Shell / GUI         |
++---------------------------+
+|    System Libraries       |
++---------------------------+
+|      Linux Kernel         |
++---------------------------+
+|        Hardware           |
++---------------------------+
+</pre>
 
+</div>
                                                    📦 Popular Linux Distributions
 
 - Debian
