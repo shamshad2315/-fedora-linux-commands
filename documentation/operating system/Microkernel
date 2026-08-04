@@ -1,1 +1,33 @@
+Microkernel — Definition
 
+A Microkernel is a kernel design that keeps only the bare essentials — process scheduling and inter-process communication (IPC) — running inside kernel space. Everything else that a traditional kernel handles (file systems, device drivers, network stack) is moved out into separate, isolated programs called servers, which run in user space and communicate with each other and the kernel through message passing.
+
+Explaining the Diagram Above
+
+Outer box (User space) — represents everything outside the trusted kernel core.
+Purple, coral, pink boxes — these are the isolated servers (file system, device driver, network stack). Each one runs as its own separate process with its own protected memory — if one crashes, the others keep running.
+Teal box (Kernel space) — this is deliberately tiny, containing only the scheduler and the IPC mechanism. It has no idea how to read a file or talk to a disk directly — it just routes messages between servers.
+Arrows — these represent messages, not direct function calls. When the file system server needs the disk driver, it doesn't call it directly; it sends a message through the kernel's IPC system, which delivers it to the target server.
+
+Note: The original page showed a diagram but you said you don't have it — I've added a simple ASCII illustration below so the structure is still clear when printed.
+
+Simple ASCII illustration
+
++------------------------------------------------+
+|                    User space                   |
+|  +---------+   +-----------+   +-------------+  |
+|  | File    |   | Network   |   | Device      |  |
+|  | System  |   | Server    |   | Driver      |  |
+|  | Server  |   | Server    |   | Server      |  |
+|  +---------+   +-----------+   +-------------+  |
+|             \       |       /                   |
+|              \      |      /                    |
+|               \     |     /                     |
+|                v    v    v                      |
+|             +----------------+                  |
+|             |   Microkernel   |  <-- scheduler   |
+|             |   (IPC + RS)    |  <-- IPC router  |
+|             +----------------+                  |
++------------------------------------------------+
+
+(Arrows represent messages passed via IPC; servers run in user space and communicate through the microkernel.)
